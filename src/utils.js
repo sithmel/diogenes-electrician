@@ -8,14 +8,14 @@ function startMethod(comp) {
     }).slice(0, arity - 1);
     args.push(next);
     start.apply(comp, args);
-  }
+  };
 }
 
 function stopMethod(comp) {
   var stop = comp.stop || function (cb) {cb();};
   return function (cfg, deps, next) {
     stop.call(comp, next);
-  }
+  };
 }
 
 function invertedDeps(name, components) {

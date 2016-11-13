@@ -4,29 +4,29 @@ This is an adapter for using [electrician](https://github.com/tes/electrician) c
 
 addElectricComponents
 ---------------------
-It adds a set of electric components to 2 Diogenes registry. The first one can be used to start the services in order, the second one to stop them in th opposite order.
+It adds a set of electric components to 2 Diogenes registry. The first one can be used to start the services in order, the second one to stop them in the opposite order.
 ```js
 var diogenesElectrician = require('diogenes-electrician');
 var Diogenes = require('diogenes');
 
 var registry = Diogenes.getRegistry();
 var stopRegistry = Diogenes.getRegistry();
-diogenesElectrician.addElectricComponents(registry, stopRegistry, components);
+// components is an object name->electrician component
+diogenesElectrician.addElectricComponents(registry, stopRegistry, components, persist);
 ```
 Then you can start a component using the diogenes "registry" API:
 ```js
 registry.instance({}).run('componentName', function (err, res) {
   // ...
-  done();
 });
 ```
 and stop with:
 ```js
 stopRegistry.instance({}).run('componentName', function (err, res) {
   // ...
-  done();
 });
 ```
+If "persist" is true the components are persisted: they are cached forever.
 
 system
 ------
