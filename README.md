@@ -12,17 +12,17 @@ var Diogenes = require('diogenes');
 var registry = Diogenes.getRegistry();
 var stopRegistry = Diogenes.getRegistry();
 // components is an object name->electrician component
-diogenesElectrician.addElectricComponents(registry, stopRegistry, components, persist);
+diogenesElectrician.addElectricComponents(registry, stopRegistry, components);
 ```
 Then you can start a component using the diogenes "registry" API:
 ```js
-registry.instance({}).run('componentName', function (err, res) {
+registry.run('componentName', function (err, res) {
   // ...
 });
 ```
 and stop with:
 ```js
-stopRegistry.instance({}).run('componentName', function (err, res) {
+stopRegistry.run('componentName', function (err, res) {
   // ...
 });
 ```
