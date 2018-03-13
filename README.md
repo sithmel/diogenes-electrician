@@ -26,7 +26,6 @@ stopRegistry.run('componentName', function (err, res) {
   // ...
 });
 ```
-If "persist" is true the components are persisted: they are cached forever.
 
 system
 ------
