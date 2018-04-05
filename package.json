@@ -34,6 +34,6 @@
     "npm-release": "^1.0.0"
   },
   "dependencies": {
-    "diogenes": "^3.1.0"
+    "diogenes": "^4.0.0"
   }
 }

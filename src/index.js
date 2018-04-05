@@ -10,10 +10,12 @@ function addElectricComponents (registry, stopRegistry, components) {
       registry.service(name)
         .dependsOn(components[name].dependsOn || [])
         .provides(startMethod(components[name]))
+        .setCache({ len: 1 }) // ensure this is executed only once
 
       stopRegistry.service(name)
         .dependsOn(components[name].dependsOn ? invertedDeps(name, components) : [])
         .provides(stopMethod(components[name]))
+        .setCache({ len: 1 }) // ensure this is executed only once
     })
 }
 
