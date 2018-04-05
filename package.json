@@ -1,6 +1,6 @@
 {
   "name": "diogenes-electrician",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "description": "Adapter to use electrician components in diogenes",
   "main": "src/index.js",
   "scripts": {
