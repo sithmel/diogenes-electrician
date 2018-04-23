@@ -14,67 +14,57 @@ describe('addElectricComponents', function () {
     main.addElectricComponents(registry, stopRegistry, components)
   })
 
-  it('must start a', function (done) {
-    registry.run('a', function (err, res) {
-      if (err) return
-      assert.equal(res, 'a')
-      done()
-    })
+  it('must start a', function () {
+    return registry.run('a')
+      .then(function (res) {
+        assert.equal(res, 'a')
+      })
   })
 
-  it('must start b', function (done) {
-    registry.run('b', function (err, res) {
-      if (err) return
-      assert.equal(res, 'b')
-      done()
-    })
+  it('must start b', function () {
+    registry.run('b')
+      .then(function (res) {
+        assert.equal(res, 'b')
+      })
   })
 
-  it('must start c', function (done) {
-    registry.run('c', function (err, res) {
-      if (err) return
-      assert.equal(res, 'c')
-      done()
-    })
+  it('must start c', function () {
+    registry.run('c')
+      .then(function (res) {
+        assert.equal(res, 'c')
+      })
   })
 
-  it('must start d', function (done) {
-    registry.run('d', function (err, res) {
-      if (err) return
-      assert.equal(res, 'd')
-      done()
-    })
+  it('must start d', function () {
+    registry.run('d')
+      .then(function (res) {
+        assert.equal(res, 'd')
+      })
   })
 
-  it('must stop a', function (done) {
-    stopRegistry.run('a', function (err, res) {
-      if (err) return
-      done()
-    })
+  it('must stop a', function () {
+    stopRegistry.run('a')
   })
 
-  it('must stop b', function (done) {
-    stopRegistry.run('b', function (err, res) {
-      if (err) return
-      assert.equal(res, 'b')
-      done()
-    })
+  it('must stop b', function () {
+    stopRegistry.run('b')
+      .then(function (res) {
+        assert.equal(res, 'b')
+      })
   })
 
-  it('must stop c', function (done) {
-    stopRegistry.run('c', function (err, res) {
-      if (err) return
-      assert.equal(res, 'c')
-      done()
-    })
+  it('must stop c', function () {
+    stopRegistry.run('c')
+      .then(function (res) {
+        assert.equal(res, 'c')
+      })
   })
 
-  it('must stop d', function (done) {
-    stopRegistry.run('d', function (err, res) {
-      if (err) return
-      assert.equal(res, 'd')
-      done()
-    })
+  it('must stop d', function () {
+    stopRegistry.run('d')
+      .then(function (res) {
+        assert.equal(res, 'd')
+      })
   })
 })
 

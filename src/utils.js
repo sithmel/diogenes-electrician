@@ -1,7 +1,9 @@
+
 function startMethod (comp) {
   var start = comp.start || function (cb) { cb() }
   var arity = start.length
   var dependsOn = comp.dependsOn || []
+
   return function (deps, next) {
     var args = dependsOn.map(function (arg) {
       return deps[arg]
